@@ -2,9 +2,7 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
-	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -40,8 +38,9 @@ func main() {
 	*/
 
 	//Inserting a new user
+
 	/*
-		username := "testuser"
+		username := "testuser3"
 		password := "testpassword"
 		created_at := time.Now()
 
@@ -54,17 +53,50 @@ func main() {
 	*/
 
 	//Selecting a user
-	var (
-		id        int
-		username  string
-		password  string
-		createdAt time.Time
-	)
-	query := `SELECT id, username, password, created_at FROM users WHERE id = ?`
-	err = db.QueryRow(query, 1).Scan(&id, &username, &password, &createdAt)
-	if err != nil {
-		log.Fatalln(err)
+	/*
+		var (
+			id        int
+			username  string
+			password  string
+			createdAt time.Time
+		)
+		query := `SELECT id, username, password, created_at FROM users WHERE id = ?`
+		err = db.QueryRow(query, 1).Scan(&id, &username, &password, &createdAt)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		fmt.Println(id, username, password, createdAt)
+	*/
+
+	//Querying all the users
+	/*
+		type user struct {
+			id        int
+			username  string
+			password  string
+			createdAt time.Time
+		}
+		var users []user
+		query := `SELECT id, username, password, created_at FROM users`
+		rows, err := db.Query(query)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		for rows.Next() {
+			var user user
+			err = rows.Scan(&user.id, &user.username, &user.password, &user.createdAt)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			users = append(users, user)
+		}
+		fmt.Println(users)
+	*/
+
+	//Deleting a row
+	_, er := db.Exec(`DELETE FROM users WHERE id = ?`, 1)
+	if er != nil {
+		log.Fatalln(er)
 	}
-	fmt.Println(id, username, password, createdAt)
 
 }
