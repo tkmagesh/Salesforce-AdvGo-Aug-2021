@@ -1,0 +1,10 @@
+
+Http Service
+    Web Server
+        Listen on a port
+        Handle (receive and respond) http requests
+
+static web server
+
+Feedback:
+    https://sfdc.plusplus.co/a/surveys/774/
