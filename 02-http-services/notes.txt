@@ -8,3 +8,12 @@ static web server
 
 Feedback:
     https://sfdc.plusplus.co/a/surveys/774/
+
+
+GET http://myApp.com/products
+GET http://myApp.com/products/123
+POST http://myApp.com/products
+PUT http://myApp.com/products/123
+DELETE http://myApp.com/products/123
+
+http://myApp.com/Categories/Stationary/Products/123
