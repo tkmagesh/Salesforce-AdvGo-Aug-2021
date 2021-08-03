@@ -1,0 +1,17 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /v1/todo                  --> todo-app/controllers.GetTodos (3 handlers)
+[GIN-debug] POST   /v1/todo                  --> todo-app/controllers.CreateATodo (3 handlers)
+[GIN-debug] GET    /v1/todo/:id              --> todo-app/controllers.GetATodo (3 handlers)
+[GIN-debug] PUT    /v1/todo/:id              --> todo-app/controllers.UpdateATodo (3 handlers)
+[GIN-debug] DELETE /v1/todo/:id              --> todo-app/controllers.DeleteATodo (3 handlers)
+[GIN-debug] Environment variable PORT is undefined. Using port :8080 by default
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN-debug] redirecting request 301: /v1/todo --> /v1/todo
+[GIN] 2021/08/04 - 00:29:15 | 200 |    4.818584ms |             ::1 | GET      "/v1/todo"
+[GIN] 2021/08/04 - 00:29:38 | 200 |    1.109908ms |             ::1 | GET      "/v1/todo"
+[GIN] 2021/08/04 - 00:29:48 | 200 |    3.882831ms |             ::1 | GET      "/v1/todo/1"
