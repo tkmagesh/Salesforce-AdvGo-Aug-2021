@@ -5,7 +5,7 @@ Concurrency
     Language features for concurrency
         go fn()
         data types :-> chan
-        language constructs :-> go, select, range
+        language constructs :-> go, select, range, <- operator
         APIs :-> sync
 
 

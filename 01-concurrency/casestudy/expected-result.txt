@@ -1,0 +1,2 @@
+Even Total : <sum of even numbers>
+Odd Total : <sum of odd numbers>
