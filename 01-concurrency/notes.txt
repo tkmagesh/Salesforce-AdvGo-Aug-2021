@@ -1,0 +1,21 @@
+Concurrency
+    Has its own scheduler
+    1000s of goroutines in one OS thread
+    Built for concurrency
+    Language features for concurrency
+        go fn()
+        data types :-> chan
+        language constructs :-> go, select, range
+        APIs :-> sync
+
+
+Assumptions that one should never make:
+    1. sequence of execution of goroutines
+    2. time taken to execute a goroutine
+
+
+
+
+Feedback:
+    https://sfdc.plusplus.co/a/surveys/773/
+
