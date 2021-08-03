@@ -1,0 +1,20 @@
+1. Raw Queries
+2. ORM
+3. SQL Builders
+
+database/sql
+    sql.Open(connstr) => sql.DB
+    sql.DB
+
+    Retrieving Data
+        cursor  =  db.Query(sql statement, parameters) => select statement
+        for cursor.next() {
+            cursor.Scan(&id, &name)
+        }
+
+        precompiling
+        db.Prepare()
+
+    Modifying data (Insert, Update, Delete)
+        stmt := db.Prepare()
+        stmt.Exec(paramter)
