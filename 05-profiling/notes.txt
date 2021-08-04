@@ -1,0 +1,60 @@
+Profiling
+
+
+
+Maintainability X Performance
+
+var products []Product
+
+func FilterProducts() []Product{
+    var electronicsProducts []Product
+    for i:=; i < len(products); i++{
+        if products[i].Category == "Electronics" {
+            electronicsProducts = append(electronicsProducts, products[i])
+        }
+    }
+    return electronicsProducts
+}
+
+electronicsProducts := Products.Filter(func(p){
+    return p.Category == "Electronics"
+})
+
+
+func (products Products) Filter(predicate func(Product)bool ) Products {
+    var result []Product
+    for i:=; i < len(products); i++{
+        if predicate(products[i]) {
+            result = append(result, products[i])
+        }
+    }
+    return result
+}
+
+
+How?
+    Benchmarking
+
+Tools
+    go toolset
+    
+    load testing tools
+        ab
+        go-wrk
+
+
+
+To run benchmark with memory
+    go test ./... -bench=. -benchmem
+
+To generate the cpu profile
+    go test ./... -bench=. -benchmem -cpuprofile prof.cpu
+
+    commands used in the pprof terminal
+        top10
+        top10 -cum
+        list <function name>
+        
+
+To access the profile data using a web interface
+    go tool pprof -http=":8080" profiling-app.test prof.cp
