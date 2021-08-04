@@ -1,12 +1,11 @@
 package services
 
 import (
-	"fmt"
 	"testing"
-
-	"github.com/stretchr/testify/mock"
+	mocks "testing-demo/mocks/services"
 )
 
+/*
 type MockService struct {
 	mock.Mock
 }
@@ -16,9 +15,10 @@ func (s *MockService) Send(msg string) bool {
 	args := s.Called(msg)
 	return args.Bool(0)
 }
+*/
 
 func TestMessageProcessor(t *testing.T) {
-	mockService := &MockService{}
+	mockService := &mocks.MessageService{}
 	mockService.On("Send", "Hello").Return(true)
 
 	processor := MessageProcessor{mockService}

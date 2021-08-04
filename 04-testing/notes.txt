@@ -5,3 +5,11 @@ Testing
 
 Benchmarking
 Test HTTP services
+
+mocker (https://github.com/vektra/mockery)
+    tool to generate mock services
+
+To generate the mocks for all the interfaces
+    mockery --all --keeptree
+
+
