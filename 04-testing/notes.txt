@@ -1,0 +1,7 @@
+Testing
+    table driven tests
+    mocks
+    race conditions
+
+Benchmarking
+Test HTTP services
