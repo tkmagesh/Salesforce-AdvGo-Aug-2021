@@ -132,3 +132,21 @@ func TestUtils(t *testing.T) {
 		})
 	})
 }
+
+func BenchmarkIsPrime_11(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		IsPrime(11)
+	}
+}
+
+func BenchmarkIsPrime_1993(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		IsPrime(1993)
+	}
+}
+
+func BenchmarkIsPrime_199997(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		IsPrime(19997)
+	}
+}

@@ -13,3 +13,10 @@ To generate the mocks for all the interfaces
     mockery --all --keeptree
 
 
+To run benchmarks
+    go test ./... -bench=. -benchtime=10s
+
+To verify test coverage
+    go test ./... --cover
+    go test ./... -coverprofile=coverage.out
+    go tool cover -html=coverage.out

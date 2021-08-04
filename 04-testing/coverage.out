@@ -1,0 +1,8 @@
+mode: set
+testing-demo/utils/utils.go:3.27,4.33 1 1
+testing-demo/utils/utils.go:9.2,9.13 1 1
+testing-demo/utils/utils.go:4.33,5.16 1 1
+testing-demo/utils/utils.go:5.16,7.4 1 0
+testing-demo/utils/utils.go:12.26,14.2 1 0
+testing-demo/services/service.go:12.44,14.2 1 0
+testing-demo/services/service.go:20.53,23.2 2 1
