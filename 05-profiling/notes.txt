@@ -58,3 +58,16 @@ To generate the cpu profile
 
 To access the profile data using a web interface
     go tool pprof -http=":8080" profiling-app.test prof.cp
+
+
+To profile a web service
+    import _ "net/http/pprof"
+
+load test the service using ab or go-wrk
+
+while the load is still being applied
+    visit http://localhost:8080/debug/pprof/
+
+
+to investigate the trace file
+go tool trace sum.trace
