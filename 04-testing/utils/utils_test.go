@@ -1,6 +1,10 @@
 package utils
 
-import "testing"
+import (
+	"fmt"
+	"os"
+	"testing"
+)
 
 /* func TestIsPrime(t *testing.T) {
 	//Arrage
@@ -83,6 +87,15 @@ func TestIsNotPrime(t *testing.T) {
 		})
 	})
 } */
+//Test Main
+
+func TestMain(m *testing.M) {
+	//setup
+	fmt.Println("Starting tests")
+	ret := m.Run()
+	fmt.Println("Finished tests")
+	os.Exit(ret)
+}
 
 //table drive tests
 
