@@ -1,0 +1,39 @@
+mutation {
+  creatAuthor(firstName : "Magesh", lastName : "Kuppan"){
+    id
+    firstName
+    lastName
+  }
+}
+
+mutation {
+  createBook(title:"Demo Book", Author : "1"){
+    id
+    title
+    Author{
+      id
+      firstName
+      lastName
+    }
+  }
+}
+
+query{
+  authorByID(id : 1){
+    id
+    firstName
+    lastName
+  }
+}
+
+query{
+ bookByID(id : 1){
+  id
+  title
+  Author{
+    firstName
+    lastName
+  }
+}
+}
+
