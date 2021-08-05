@@ -1,0 +1,7 @@
+1. Payload spec
+2. Service spec
+
+tools generate proxy (client) & stubs (server)
+
+
+brew install protobuf
