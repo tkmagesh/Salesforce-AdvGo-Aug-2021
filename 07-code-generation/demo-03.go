@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 	"text/template"
 )
@@ -19,12 +18,8 @@ Hi {{.First}} {{.Last}},
 {{else}} Have a good day!
 {{end}}
 	`
-	te := template.New("greeter")
-	t, err := te.Parse(templateStr)
-	if err != nil {
-		log.Fatalln(err)
-	}
+	parsedT := template.Must(template.New("name").Parse(templateStr))
 	//user := Name{First: "Magesh", Last: "Kuppan", TimeOfDay: "Morning"}
 	user := Name{First: "Magesh", Last: "Kuppan"}
-	err = t.Execute(os.Stdout, user)
+	parsedT.Execute(os.Stdout, user)
 }
