@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 	"text/template"
@@ -58,13 +59,15 @@ type TemplateData struct {
 }
 
 func main() {
-	/* typeName := flag.String("N", "Test", "Type Name")
-	flag.Parse() */
-	templateData := TemplateData{"Customer", "domain"}
-	file, _ := os.Create(templateData.TypeName + "s.go")
+	typeName := flag.String("N", "Test", "Type Name")
+	pkgName := flag.String("P", "TestPackage", "Package Name")
+	flag.Parse()
+	templateData := TemplateData{*typeName, *pkgName}
+	fileName := templateData.TypeName + "s.go"
+	file, _ := os.Create(fileName)
 	defer file.Close()
 
 	parsedT := template.Must(template.New("").Parse(collectionUtilTemplate))
 	parsedT.Execute(file, templateData)
-	fmt.Println("Done")
+	fmt.Println(fileName, " created!")
 }
