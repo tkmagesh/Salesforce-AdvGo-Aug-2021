@@ -1,0 +1,38 @@
+Templates
+Code generation using the templates
+
+Template
+    boilerplate + data => result
+
+
+template
+<body>
+    <[to]>
+    <[from]>
+    Reg : [subject]
+    Date : [date]
+
+    Hi [name],
+        Mollit duis fugiat elit cupidatat. Veniam labore duis aliqua aliquip sit voluptate nulla incididunt exercitation labore id fugiat adipisicing consectetur. Fugiat sunt enim consequat anim ex reprehenderit enim commodo sint elit sunt ullamco cupidatat adipisicing. Et consectetur ut excepteur deserunt veniam. Nostrud ullamco est ad dolor. Consequat voluptate elit mollit laborum dolore ullamco qui qui pariatur ex anim excepteur voluptate consequat.
+    <[signature]>
+</body>
+
+data = { to, from, name, subject, date, signature }
+
+templateEngine = TemplateEngine(template)
+templateEngine.generate(data)
+
+
+text/template package
+    placeholders = {{ }}
+
+New()
+    - creates an instance of a template engine
+
+Parse()
+    - parses the template
+    - retains the plan to generate the result
+
+Execute()
+    - generate the result using with data
+
